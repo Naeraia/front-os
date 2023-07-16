@@ -10,8 +10,6 @@
     let noting = false;
     let noteId: number|undefined = undefined;
 
-    
-
     setContext('process', process);
 </script>
 

@@ -87,7 +87,9 @@
 
 	async function deleteNote() {
 		deleting = true;
-		await noteableDb.notes.delete(id);
+		if(note.id) {
+			await noteableDb.notes.delete(id);
+		}
 		deleting = false;
 		deleteModal.close();
         deletedNote.set(note)
@@ -131,34 +133,34 @@
 				{/if}
 			</button>
 		</div>
-		<div class="relative flex-1 overflow-hidden bg-base-200 rounded-md">
+		<div class="relative textarea flex-1 overflow-hidden bg-base-200">
 			<Svroller width="100%" height="100%">
 				<textarea
 					use:autosize
-					class="textarea bg-base-200 rounded-md w-full min-h-full p-5 focus:outline-none disabled:cursor-text"
+					class="textarea bg-base-200 w-full min-h-full p-5 focus:outline-none disabled:cursor-text"
 					bind:value={note.content}
 					disabled={saving || !editing}
 				/>
 			</Svroller>
 		</div>
-		<ul class="flex bg-base-200 rounded-md gap-1.5 p-1 z-10">
-			<li class="flex items-center">
-				<label class="swap swap-flip">
+		<ul class="flex bg-base-200 menu textarea menu-horizontal gap-1.5 p-1 z-10">
+			<li class="flex items-center content-center mb-0">
+				<label class="swap swap-flip h-full">
 					<!-- this hidden checkbox controls the state -->
 					<input type="checkbox" />
 
-					<div class="flex items-center px-3 text-sm gap-3 swap-on tooltip" data-tip={`Created`}>
+					<div class="flex content-center items-center text-sm gap-3 swap-on tooltip" data-tip={`Created`}>
 						<Icon data={faClock} />{formatRelative(note.created, new Date())}
 					</div>
 					<div
-						class="flex items-center px-3 text-sm gap-3 swap-off tooltip"
+						class="flex content-center items-center text-sm gap-3 swap-off tooltip"
 						data-tip={`Last updated`}
 					>
 						<Icon data={faClock} />{formatRelative(note.updated, new Date())}
 					</div>
 				</label>
 			</li>
-			<li class="flex-1 flex justify-end">
+			<li class="flex-1 flex justify-end content-end">
 				<button
 					on:click={() => deleteModal.showModal()}
 					class="btn btn-sm btn-square btn-ghost h-9 w-9 tooltip"
@@ -187,3 +189,9 @@
 		</ul>
 	{/if}
 </div>
+
+<style lang="postcss">
+	.menu .btn {
+		@apply flex items-center justify-center content-center;
+	}
+</style>
