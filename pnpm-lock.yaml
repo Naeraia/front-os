@@ -74,6 +74,9 @@ importers:
       theme-change:
         specifier: 2.5.0
         version: 2.5.0
+      web-vitals:
+        specifier: ^3.4.0
+        version: 3.4.0
     devDependencies:
       '@sveltejs/adapter-auto':
         specifier: 2.1.0
@@ -3931,6 +3934,10 @@ packages:
       '@vue/runtime-dom': 3.3.4
       '@vue/server-renderer': 3.3.4(vue@3.3.4)
       '@vue/shared': 3.3.4
+    dev: false
+
+  /web-vitals@3.4.0:
+    resolution: {integrity: sha512-n9fZ5/bG1oeDkyxLWyep0eahrNcPDF6bFqoyispt7xkW0xhDzpUBTgyDKqWDi1twT0MgH4HvvqzpUyh0ZxZV4A==}
     dev: false
 
   /well-known-symbols@2.0.0:
