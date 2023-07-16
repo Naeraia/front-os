@@ -190,9 +190,3 @@
 		</ul>
 	{/if}
 </div>
-
-<style lang="postcss">
-	.menu .btn {
-		@apply flex items-center justify-center content-center;
-	}
-</style>
