@@ -40,6 +40,7 @@
   "dependencies": {
     "@fortawesome/free-regular-svg-icons": "6.4.0",
     "@fortawesome/free-solid-svg-icons": "6.4.0",
+    "@front-os/core": "^0.0.1",
     "@svelteuidev/composables": "0.14.0",
     "date-fns": "2.30.0",
     "dexie": "4.0.1-alpha.24",
@@ -48,7 +49,6 @@
     "svelte-autosize": "1.1.0",
     "svelte-awesome": "3.2.1",
     "svrollbar": "0.12.0",
-    "theme-change": "2.5.0",
-    "@front-os/core": "*"
+    "theme-change": "2.5.0"
   }
 }
