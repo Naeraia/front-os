@@ -26,5 +26,5 @@
     <td class="whitespace-nowrap">{process.app.name}</td> 
     <td class="whitespace-nowrap">{process.pid}</td> 
     <td class="whitespace-nowrap">{duration}</td>
-    <td class="whitespace-nowrap">{format(process.time.created, "Y-m-d H:i:s")}</td>
+    <td class="whitespace-nowrap">{format(process.time.created, "Y-MM-DD H:i:s")}</td>
 </tr>
