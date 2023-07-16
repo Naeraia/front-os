@@ -132,12 +132,21 @@ importers:
 
   packages/front-os-core:
     dependencies:
+      '@fortawesome/free-regular-svg-icons':
+        specifier: 6.4.0
+        version: 6.4.0
+      '@fortawesome/free-solid-svg-icons':
+        specifier: 6.4.0
+        version: 6.4.0
       '@svelteuidev/composables':
         specifier: 0.14.0
         version: 0.14.0(svelte@4.0.5)
       '@vueuse/core':
         specifier: 10.2.1
         version: 10.2.1(vue@3.3.4)
+      svelte-awesome:
+        specifier: 3.2.1
+        version: 3.2.1(svelte@4.0.5)
     devDependencies:
       '@sveltejs/adapter-auto':
         specifier: 2.1.0
