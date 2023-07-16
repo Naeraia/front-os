@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="linear-gradient" y1="1" x2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#1e0845"/>
+      <stop offset="1" stop-color="#04414a"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" y1="1" x2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#641be6"/>
+      <stop offset="1" stop-color="#16d3f3"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#641ae6"/>
+      <stop offset="1" stop-color="#320d73"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-7" y1="1" x2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#641be6"/>
+      <stop offset="1" stop-color="#a0eefa"/>
+    </linearGradient>
+    <clipPath id="clip-noteable">
+      <rect width="512" height="512"/>
+    </clipPath>
+  </defs>
+  <g id="noteable" clip-path="url(#clip-noteable)">
+    <g id="Icon" transform="translate(-28.483 -30)">
+      <path id="Path_3" data-name="Path 3" d="M71.571,0H314.912c39.528,0,71.571,32.66,71.571,72.948v334.1c0,40.288-32.043,72.948-71.571,72.948H71.571C32.043,480,0,447.34,0,407.052V72.948C0,32.66,32.043,0,71.571,0Z" transform="translate(90 62)" fill="url(#linear-gradient)"/>
+      <path id="Path_1" data-name="Path 1" d="M70.783-.232,317.778.106C357.665.106,390,32.743,390,73l-2,227.544c-17.4,17.559-176.5,178.395-177.331,179.221H36.111A36.281,36.281,0,0,1,0,443.32V73C0,32.743,30.9-.232,70.783-.232Z" transform="translate(88.483 62.232)" fill="url(#linear-gradient-2)"/>
+      <rect id="Rectangle_16" data-name="Rectangle 16" width="216.047" height="44.619" rx="5" transform="translate(177.174 350.606)" fill="url(#linear-gradient-3)"/>
+      <rect id="Rectangle_12" data-name="Rectangle 12" width="44.557" height="64" rx="5" transform="translate(177.174 30)" fill="url(#linear-gradient-3)"/>
+      <rect id="Rectangle_13" data-name="Rectangle 13" width="44.557" height="64" rx="5" transform="translate(262.919 30)" fill="url(#linear-gradient-3)"/>
+      <rect id="Rectangle_14" data-name="Rectangle 14" width="44.557" height="64" rx="5" transform="translate(348.664 30)" fill="url(#linear-gradient-3)"/>
+      <path id="Path_2" data-name="Path 2" d="M5.745,0H183L5.745,179.229Z" transform="translate(293.481 362.771)" fill="url(#linear-gradient-7)"/>
+      <rect id="Rectangle_15" data-name="Rectangle 15" width="216.047" height="44.619" rx="5" transform="translate(177.174 173.303)" fill="url(#linear-gradient-3)"/>
+      <rect id="Rectangle_17" data-name="Rectangle 17" width="216.047" height="44.619" rx="5" transform="translate(177.174 262.542)" fill="url(#linear-gradient-3)"/>
+    </g>
+  </g>
+</svg>

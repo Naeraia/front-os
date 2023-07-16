@@ -1,6 +1,6 @@
 <script lang=ts>
-	import Window from "$lib/components/window.svelte";
-	import type { Process } from "$lib/stores/os/processes";
+	import {Window} from "@front-os/core";
+	import type { Process } from "@front-os/core";
     import { evaluate, isOperatorNode } from "mathjs";
 
     export let process: Process
@@ -36,7 +36,7 @@
     }
 
     $: display = chain.map(item => {
-        if(operators.includes(item))
+        if(operators.includes(item as string))
             return ` ${item} `;
         return item;
     }).join('');

@@ -6,6 +6,26 @@ html, body {
     @apply select-none;
 }
 
-div {
-    box-sizing: border-box;
+.window {
+    @apply absolute bg-base-300 rounded-lg overflow-hidden shadow-md flex flex-col z-10;
+}
+
+.window-title {
+    @apply relative bg-base-200 text-sm w-full py-2 tooltip flex items-center;
+}
+
+.window-title-icon {
+    @apply pointer-events-none h-6 w-auto ml-3;
+}
+
+.window-title-appname {
+    @apply flex-1 text-left ml-3;
+}
+
+.title-button-group {
+    @apply flex gap-3 px-2;
+
+    .window-title-btn {
+        @apply btn btn-square flex-grow-0 btn-xs;
+    }
 }

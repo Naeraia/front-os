@@ -1,5 +1,6 @@
-import { ApplicationType, type ApplicationBase } from "$lib/stores/os/processes";
+import { ApplicationType, type ApplicationBase } from "@front-os/core";
 import Component from './component.svelte'
+
 const settings: ApplicationBase = {
     key: "system.settings",
     name: "Settings",

@@ -1,9 +1,9 @@
 <script lang=ts>
-	import Window from "$lib/components/window.svelte";
-	import type { Process } from "$lib/stores/os/processes";
+	import { Window, type Process } from "@front-os/core";
 	import { setContext } from "svelte";
 	import Home from "./components/home.svelte";
 	import Noting from "./components/noting.svelte";
+	import Icon from "./components/icon.svelte";
 
     export let process: Process
 

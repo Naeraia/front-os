@@ -1,12 +1,13 @@
 <script lang="ts">
-	import Window from '$lib/components/window.svelte';
-	import type { Process } from '$lib/stores/os/processes';
+	import { Window, ApplicationType, type Process, type ApplicationBase } from "@front-os/core";
 	import { onMount } from 'svelte';
 	import { themeChange } from 'theme-change';
 
 	export let process: Process;
 
 	const themes = [
+		'front-os-light',
+		'front-os-dark',
 		'light',
 		'dark',
 		'cupcake',

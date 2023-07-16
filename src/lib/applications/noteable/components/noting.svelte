@@ -12,7 +12,8 @@
 	import { Svroller } from 'svrollbar';
 	import autosize from 'svelte-autosize';
 	import { formatRelative } from 'date-fns';
-	import { keymap } from "$lib/commands";
+	import { os } from '$lib';
+	import { Commands } from '$lib/os/keymap';
 
 	enum SaveStatus {
 		NONE,
@@ -96,7 +97,7 @@
 		dispatch('close');
 	}
 
-    const off = keymap.on("commands.cancel", "noteable-note-edit", () => {
+    const off = os.keymap.on(Commands.CANCEL, "noteable-note-edit", () => {
         dispatch('close')
     })
 
@@ -143,9 +144,9 @@
 				/>
 			</Svroller>
 		</div>
-		<ul class="flex bg-base-200 menu textarea menu-horizontal gap-1.5 p-1 z-10">
+		<ul class="flex bg-base-200 rounded-box gap-1.5 p-1 z-10">
 			<li class="flex items-center content-center mb-0">
-				<label class="swap swap-flip h-full">
+				<label class="btn btn-ghost rounded-box normal-case btn-sm swap swap-flip h-full">
 					<!-- this hidden checkbox controls the state -->
 					<input type="checkbox" />
 

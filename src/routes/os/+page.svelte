@@ -2,15 +2,15 @@
 	import calculator from "$lib/applications/calculator";
     import noteable from "$lib/applications/noteable"
 	import settings from "$lib/applications/settings";
-	import { keymap } from "$lib/commands";
-	import { processes, time } from "$lib/stores/os";
 	import { typewriter } from "$lib/transitions";
 	import { onDestroy, onMount } from "svelte";
 	import { themeChange } from "theme-change";
+	import { Commands } from "$lib/os/keymap";
+	import { os } from "$lib";
 
     let escaped: boolean = false 
 
-    const off = keymap.on("commands.cancel", "modal", (...args) => {
+    const off = os.keymap.on(Commands.CANCEL, "modal", (...args) => {
         console.log(args);
         escaped = true
 
@@ -19,7 +19,8 @@
         }, 1000)
     })
 
-    $: windowProcesses = processes.windows()
+    $: windowProcesses = os.processes.windows()
+    $: time = os.time;
 
     let show: boolean = false;
 
@@ -68,7 +69,7 @@
         {/each}
     </div>
     <div class="div w-full flex p-5">
-        <div class="bg-neutral rounded-xl flex-1 h-16 grid grid-cols-3 px-5 shadow-md">
+        <div class="bg-neutral rounded-box flex-1 h-16 grid grid-cols-3 px-5 shadow-md">
             <div class="flex items-center justify-start"></div>
             <div class="flex items-center justify-center">
                 <a class="btn btn-square btn-neutral" target="_blank" href="https://github.com/partyian/front-os">
@@ -76,19 +77,19 @@
                 </a>
                 <button class="tooltip btn btn-square btn-neutral flex items-center justify-center" 
                         data-tip={calculator.name}
-                        on:click={() => processes.open(calculator)}
+                        on:click={() => os.processes.open(calculator)}
                 >
                     <img src={calculator.icon} alt={calculator.name} class="w-6 h-6" />
                 </button>
                 <button class="tooltip btn btn-square btn-neutral flex items-center justify-center" 
                         data-tip={noteable.name}
-                        on:click={() => processes.open(noteable)}
+                        on:click={() => os.processes.open(noteable)}
                 >
                     <img src={noteable.icon} alt={noteable.name} class="w-6 h-6" />
                 </button>
                 <button class="tooltip btn btn-square btn-neutral flex items-center justify-center" 
                         data-tip={settings.name}
-                        on:click={() => processes.open(settings)}
+                        on:click={() => os.processes.open(settings)}
                 >
                     <img src={settings.icon} alt={settings.name} class="w-6 h-6" />
                 </button>
