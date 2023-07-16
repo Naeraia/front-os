@@ -42,6 +42,7 @@
     "@fortawesome/free-solid-svg-icons": "6.4.0",
     "@front-os/core": "workspace:^",
     "@svelteuidev/composables": "0.14.0",
+    "@vercel/analytics": "^1.0.1",
     "date-fns": "2.30.0",
     "dexie": "4.0.1-alpha.24",
     "marked": "5.1.1",
