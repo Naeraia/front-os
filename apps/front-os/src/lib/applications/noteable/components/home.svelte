@@ -1,13 +1,15 @@
 <script lang=ts>
 	import { Icon } from "svelte-awesome";
     import { faNoteSticky, faPaintBrush } from "@fortawesome/free-solid-svg-icons"
-	import { createEventDispatcher } from "svelte";
+	import { createEventDispatcher, getContext, onDestroy } from "svelte";
     import { liveQuery } from "dexie";
     import { type NoteableNote, noteableDb, deletedNote } from "../db";
     import { Svroller } from 'svrollbar'
     import { formatDistance } from 'date-fns'
 	import { cubicOut } from "svelte/easing";
 	import { tweened } from "svelte/motion";
+	import type { createKeyMap } from "@front-os/core/dist";
+	import { NoteableCommands as NoteableCommands } from "../keymap";
 
     const dispatch = createEventDispatcher()
 
@@ -27,7 +29,21 @@
 		easing: cubicOut
 	});
 
-    deletedNote.subscribe(note => {
+    function newNote() {
+        dispatch('new:note')
+    }
+
+    const keymap = getContext<ReturnType<typeof createKeyMap>>('keymap');
+
+    const destroyNewNote = keymap.on(NoteableCommands.NewNote, "home-new-note", ({ event }) => {
+        event.preventDefault();
+        event.stopImmediatePropagation()
+        event.stopPropagation();
+        newNote();
+        return false;
+    })
+
+    const destroyDeleteNote = deletedNote.subscribe(note => {
         if(note) {
             progress.set(1)
             
@@ -43,9 +59,21 @@
             }, 5000)
         }
     })
+
+    onDestroy(() => {
+        destroyNewNote()
+        destroyDeleteNote()
+    })
 </script>
 <div class="p-5 flex flex-col gap-5 bg-gradient-to-tr from-primary/20 h-full overflow-hidden">
-    <h1 class="text-xl font-semibold">Welcome to Noteable</h1>
+    <h1 class="text-xl font-semibold flex items-center">
+        <span class="flex-1">Welcome to Noteable</span>
+        <span class="flex tooltip tooltip-left" data-tip="Show keybindings">
+            <span class="kbd kbd-md">Ctrl</span>
+            <span class="block mx-1 mt-0.5">+</span>
+            <span class="kbd kbd-md">/</span>
+        </span>
+    </h1>
     {#if restore}
         <div class="alert relative overflow-hidden">
             <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
@@ -59,7 +87,7 @@
     <div class="bg-base-200 bg-gradient-to-tr from-primary/20 rounded-md p-3 flex flex-col gap-3">
         <h2 class="text-lg font-medium">My next important moment is a...</h2>
         <div class="flex gap-3">
-            <button on:click={() => dispatch('new:note')} class="btn h-auto p-6 flex flex-col gap-3 capitalize">
+            <button on:click={newNote} class="btn h-auto p-6 flex flex-col gap-3 capitalize">
                 <Icon data={faNoteSticky} scale={2} /> New Note
             </button>
             <button class="btn h-auto p-6 flex flex-col gap-3 capitalize" disabled>

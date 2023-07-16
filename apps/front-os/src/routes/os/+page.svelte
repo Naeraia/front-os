@@ -12,7 +12,6 @@
     let escaped: boolean = false 
 
     const off = os.keymap.on(Commands.CANCEL, "modal", (...args) => {
-        console.log(args);
         escaped = true
 
         setTimeout(() => {

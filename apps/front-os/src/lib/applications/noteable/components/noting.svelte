@@ -7,13 +7,15 @@
 		faClock,
 		faTrash
 	} from '@fortawesome/free-solid-svg-icons';
-	import { createEventDispatcher, onDestroy, onMount, setContext } from 'svelte';
+	import { createEventDispatcher, getContext, onDestroy, onMount, setContext } from 'svelte';
 	import { deletedNote, noteableDb, type NoteableNote } from '../db';
 	import { Svroller } from 'svrollbar';
 	import autosize from 'svelte-autosize';
 	import { formatRelative } from 'date-fns';
 	import { os } from '$lib';
 	import { Commands } from '$lib/os/keymap';
+	import { createKeyMap } from '@front-os/core/dist';
+	import { NoteableCommands } from '../keymap';
 
 	enum SaveStatus {
 		NONE,
@@ -54,9 +56,11 @@
 	}
 
 	const dispatch = createEventDispatcher();
+	const keymap = getContext('keymap');
 
 	let status: SaveStatus = SaveStatus.NONE;
 	let saving: boolean = false;
+
 	async function save() {
 		saving = true;
 		try {
@@ -70,8 +74,6 @@
 				note.id = id;
 				status = SaveStatus.OK;
 			}
-
-			console.log(note, status);
 		} catch (e) {
 			status = SaveStatus.FAILED;
 		} finally {
@@ -101,8 +103,14 @@
         dispatch('close')
     })
 
+	const destroySaveNote = (keymap as typeof os.keymap).on(NoteableCommands.SaveNote, "noteable-note-save", ({ event }) => {
+		save()
+		event.preventDefault();
+	})
+
     onDestroy(() => {
         off()
+		destroySaveNote()
     })
 </script>
 
