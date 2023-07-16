@@ -5,7 +5,7 @@ const settings: ApplicationBase = {
     key: "system.settings",
     name: "Settings",
     description: "FrontOS Settings",
-    icon: "/fontawesome/far/gear.svg",
+    icon: "/assets/icons/settings.svg",
     type: ApplicationType.APPLICATION,
     location: "system",
     components: {
