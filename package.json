@@ -35,8 +35,7 @@
     "sync": "turbo run sync --parallel",
     "test": "turbo run test --parallel",
     "watch": "turbo run watch --parallel",
-    "uplock": "turbo run upload --parallel",
-    "update:lockfile": "pnpm update"
+    "uplock": "turbo run upload --parallel"
   },
   "lint-staged": {
     "*": "prettier --write --ignore-unknown",
