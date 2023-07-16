@@ -6,6 +6,7 @@
 	import { processes, time } from "$lib/stores/os";
 	import { typewriter } from "$lib/transitions";
 	import { onDestroy, onMount } from "svelte";
+	import { themeChange } from "theme-change";
 
     let escaped: boolean = false 
 
@@ -40,6 +41,7 @@
 	);
 
     onMount(() => {
+        themeChange(false);
         show = true;
     })
 

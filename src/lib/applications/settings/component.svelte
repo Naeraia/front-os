@@ -2,7 +2,6 @@
 	import Window from '$lib/components/window.svelte';
 	import type { Process } from '$lib/stores/os/processes';
 	import { onMount } from 'svelte';
-	import { themeChange } from 'theme-change';
 
 	export let process: Process;
 
@@ -37,10 +36,6 @@
 		'coffee',
 		'winter'
 	];
-
-	onMount(() => {
-		themeChange(false);
-	});
 </script>
 
 <Window {process} storageKey={process.app.key}>
