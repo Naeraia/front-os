@@ -71,6 +71,9 @@
         <div class="bg-neutral rounded-xl flex-1 h-16 grid grid-cols-3 px-5 shadow-md">
             <div class="flex items-center justify-start"></div>
             <div class="flex items-center justify-center">
+                <a class="btn btn-square btn-neutral" target="_blank" href="https://github.com/partyian/front-os">
+                    <img src="/github.svg" class="h-7 w-7" alt="FrontOS Github" />
+                </a>
                 <button class="tooltip btn btn-square btn-neutral flex items-center justify-center" 
                         data-tip={calculator.name}
                         on:click={() => processes.open(calculator)}
