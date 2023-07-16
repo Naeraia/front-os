@@ -18,7 +18,7 @@
             escaped = false
         }, 1000)
     })
-
+~
     $: windowProcesses = os.processes.windows()
     $: time = os.time;
 
