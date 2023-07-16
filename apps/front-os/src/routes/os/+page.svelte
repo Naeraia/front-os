@@ -2,6 +2,7 @@
 	import calculator from "$lib/applications/calculator";
     import noteable from "$lib/applications/noteable"
 	import settings from "$lib/applications/settings";
+	import tasker from "$lib/applications/tasker";
 	import { typewriter } from "$lib/transitions";
 	import { onDestroy, onMount } from "svelte";
 	import { themeChange } from "theme-change";
@@ -86,6 +87,12 @@
                         on:click={() => os.processes.open(noteable)}
                 >
                     <img src={noteable.icon} alt={noteable.name} class="w-6 h-6" />
+                </button>
+                <button class="tooltip btn btn-square btn-neutral flex items-center justify-center" 
+                        data-tip={tasker.name}
+                        on:click={() => os.processes.open(tasker)}
+                >
+                    <img src={tasker.icon} alt={tasker.name} class="w-6 h-6" />
                 </button>
                 <button class="tooltip btn btn-square btn-neutral flex items-center justify-center" 
                         data-tip={settings.name}
