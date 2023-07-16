@@ -42,7 +42,7 @@ importers:
         specifier: 6.4.0
         version: 6.4.0
       '@front-os/core':
-        specifier: '*'
+        specifier: workspace:^
         version: link:../../packages/front-os-core
       '@svelteuidev/composables':
         specifier: 0.14.0

@@ -3,8 +3,7 @@
 	"pipeline": {
 		"build": {
 			"dependsOn": ["^package"],
-			"outputs": [".svelte-kit/**", ".vercel/**", "dist/**"],
-			"cache": false
+			"outputs": [".svelte-kit/**", ".vercel/**", "dist/**"]
 		},
 		"dev": {
 			"cache": false,
