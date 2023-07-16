@@ -43,30 +43,30 @@
 </script>
 
 <Window {process} storageKey={process.app.key}>
-    <div data-window-drag-blocker="true" class="relative">
-        <div class="bg-base-100 px-3 py-2 text-right">
+    <div data-window-drag-blocker="true" class="relative bg-gradient-to-tr from-secondary/25 p-5 flex flex-col gap-5">
+        <div class="bg-base-200 bg-gradient-to-tr from-secondary/20 rounded-md p-3 text-right">
             {display.length ? display : '0'}
         </div>
-        <div class="grid grid-cols-4">
-            <button on:click={clear} class="btn btn-square rounded-none">AC</button>
-            <button class="btn btn-square rounded-none">+/-</button>
-            <button on:click={() => addOperator('%')} class="btn btn-square rounded-none">%</button>
-            <button on:click={() => addOperator('/')} class="btn btn-square rounded-none">/</button>
-            <button on:click={() => addNumber(7)}  class="btn btn-square rounded-none">7</button>
-            <button on:click={() => addNumber(8)}  class="btn btn-square rounded-none">8</button>
-            <button on:click={() => addNumber(9)}  class="btn btn-square rounded-none">9</button>
-            <button on:click={() => addOperator('*')} class="btn btn-square rounded-none">x</button>
-            <button on:click={() => addNumber(4)}  class="btn btn-square rounded-none">4</button>
-            <button on:click={() => addNumber(5)}  class="btn btn-square rounded-none">5</button>
-            <button on:click={() => addNumber(6)}  class="btn btn-square rounded-none">6</button>
-            <button on:click={() => addOperator('-')} class="btn btn-square rounded-none">-</button>
-            <button on:click={() => addNumber(1)}  class="btn btn-square rounded-none">1</button>
-            <button on:click={() => addNumber(2)}  class="btn btn-square rounded-none">2</button>
-            <button on:click={() => addNumber(3)}  class="btn btn-square rounded-none">3</button>
-            <button on:click={() => addOperator('+')} class="btn btn-square rounded-none">+</button>
-            <button on:click={() => addNumber(0)} class="btn btn-square col-span-2 w-full rounded-none">0</button>
-            <button on:click={() => addDecimal()} class="btn btn-square rounded-none">.</button>
-            <button on:click={calculate} class="btn btn-square rounded-none">=</button>
+        <div class="grid grid-cols-4 overflow-hidden bg-base-200/60 rounded-md">
+            <button on:click={clear} class="btn btn-square btn-ghost rounded-none">AC</button>
+            <button class="btn btn-square btn-ghost rounded-none">+/-</button>
+            <button on:click={() => addOperator('%')} class="btn btn-square btn-ghost rounded-none">%</button>
+            <button on:click={() => addOperator('/')} class="btn btn-square btn-ghost rounded-none">/</button>
+            <button on:click={() => addNumber(7)}  class="btn btn-square btn-ghost rounded-none">7</button>
+            <button on:click={() => addNumber(8)}  class="btn btn-square btn-ghost rounded-none">8</button>
+            <button on:click={() => addNumber(9)}  class="btn btn-square btn-ghost rounded-none">9</button>
+            <button on:click={() => addOperator('*')} class="btn btn-square btn-ghost rounded-none">x</button>
+            <button on:click={() => addNumber(4)}  class="btn btn-square btn-ghost rounded-none">4</button>
+            <button on:click={() => addNumber(5)}  class="btn btn-square btn-ghost rounded-none">5</button>
+            <button on:click={() => addNumber(6)}  class="btn btn-square btn-ghost rounded-none">6</button>
+            <button on:click={() => addOperator('-')} class="btn btn-square btn-ghost rounded-none">-</button>
+            <button on:click={() => addNumber(1)}  class="btn btn-square btn-ghost rounded-none">1</button>
+            <button on:click={() => addNumber(2)}  class="btn btn-square btn-ghost rounded-none">2</button>
+            <button on:click={() => addNumber(3)}  class="btn btn-square btn-ghost rounded-none">3</button>
+            <button on:click={() => addOperator('+')} class="btn btn-square btn-ghost rounded-none">+</button>
+            <button on:click={() => addNumber(0)} class="btn btn-square btn-ghost col-span-2 w-full rounded-none">0</button>
+            <button on:click={() => addDecimal()} class="btn btn-square btn-ghost rounded-none">.</button>
+            <button on:click={calculate} class="btn btn-square btn-ghost rounded-none">=</button>
         </div>
     </div>
 </Window>

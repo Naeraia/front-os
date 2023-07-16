@@ -7,7 +7,7 @@
 </script>
 
 <Window {process} storageKey={process.app.key}>
-    <div data-window-drag-blocker="true" class="relative">
-        Settings
+    <div data-window-drag-blocker="true" class="relative p-5">
+        Still cooking the spaghetti.
     </div>
 </Window>
