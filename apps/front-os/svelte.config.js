@@ -17,7 +17,7 @@ const config = {
 		// See https://kit.svelte.dev/docs/adapters for more information about adapters.
 		adapter: adapter(),
 		alias: {
-			'@front-os/core': path.resolve(__dirname, "./packages/front-os-core")
+			'@front-os/core': path.resolve(__dirname, "../../packages/front-os-core")
 		}
 	}
 };

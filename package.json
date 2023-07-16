@@ -1,60 +1,54 @@
 {
-    "name": "front-os",
-    "version": "0.0.1",
-    "private": true,
-    "scripts": {
-        "dev": "vite dev",
-        "build": "vite build",
-        "preview": "vite preview",
-        "test": "npm run test:integration && npm run test:unit",
-        "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-        "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-        "lint": "prettier --plugin-search-dir . --check . && eslint .",
-        "format": "prettier --plugin-search-dir . --write .",
-        "test:integration": "playwright test",
-        "test:unit": "vitest",
-        "package:core": "pnpm run --dir packages/front-os-core"
-    },
-    "workspaces": [
-        "packages/*"
-    ],
-    "devDependencies": {
-        "@playwright/test": "^1.36.1",
-        "@sveltejs/adapter-auto": "^2.1.0",
-        "@sveltejs/kit": "^1.22.3",
-        "@typescript-eslint/eslint-plugin": "^5.62.0",
-        "@typescript-eslint/parser": "^5.62.0",
-        "@webcontainer/api": "^1.1.5",
-        "autoprefixer": "^10.4.14",
-        "daisyui": "^3.2.1",
-        "eslint": "^8.45.0",
-        "eslint-config-prettier": "^8.8.0",
-        "eslint-plugin-svelte": "^2.32.2",
-        "postcss": "^8.4.26",
-        "prettier": "^2.8.8",
-        "prettier-plugin-svelte": "^2.10.1",
-        "svelte": "^4.0.5",
-        "svelte-check": "^3.4.6",
-        "tailwindcss": "^3.3.3",
-        "tslib": "^2.6.0",
-        "typescript": "^5.1.6",
-        "vite": "^4.4.4",
-        "vitest": "^0.32.4"
-    },
-    "type": "module",
-    "dependencies": {
-        "@fortawesome/free-regular-svg-icons": "^6.4.0",
-        "@fortawesome/free-solid-svg-icons": "^6.4.0",
-        "@svelteuidev/composables": "^0.14.0",
-        "@vueuse/core": "^10.2.1",
-        "date-fns": "^2.30.0",
-        "dexie": "4.0.1-alpha.24",
-        "marked": "^5.1.1",
-        "mathjs": "^11.8.2",
-        "svelte-autosize": "^1.1.0",
-        "svelte-awesome": "^3.2.1",
-        "svrollbar": "^0.12.0",
-        "theme-change": "^2.5.0",
-        "tinykeys": "^2.1.0"
-    }
+  "name": "front-os",
+  "private": true,
+  "keywords": [
+    "Front OS",
+    "front-os",
+    "os",
+    "operating system",
+    "svelte"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/partyian/front-os"
+  },
+  "license": "MIT",
+  "author": "Ian Laan",
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "apps:front-os": "pnpm --dir apps/front-os",
+    "clean": "rimraf packages/*/{dist,package,.turbo,.svelte-kit}",
+    "clean:all": "rimraf packages/*/{node_modules,.svelte-kit,dist,package,.turbo} apps/docs/node_modules",
+    "coverage": "turbo run coverage --parallel",
+    "dev": "turbo run dev --parallel",
+    "format": "prettier --write --ignore-unknown ./package.json configuration apps && turbo run format --parallel",
+    "lint": "turbo run lint --parallel",
+    "package": "pnpm clean && turbo run package --parallel",
+    "pre-commit": "lint-staged",
+    "pub": "turbo run pub --parallel",
+    "sort": "npx sort-package-json && turbo run sort && syncpack set-semver-ranges -p -d",
+    "build": "turbo run build --parallel",
+    "sync": "turbo run sync --parallel",
+    "test": "turbo run test --parallel",
+    "watch": "turbo run watch --parallel"
+  },
+  "lint-staged": {
+    "*": "prettier --write --ignore-unknown",
+    "*.{js,ts,svelte}": "eslint --fix"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "2.2.0",
+    "lint-staged": "13.2.2",
+    "prettier": "2.8.8",
+    "prettier-plugin-svelte": "2.10.0",
+    "rimraf": "3.0.2",
+    "syncpack": "8.2.4",
+    "turbo": "latest",
+    "vitest": "0.31.0"
+  },
+  "verion": "0.0.1"
 }
