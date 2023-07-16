@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
+    "build:web": "vite build",
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
@@ -47,6 +48,7 @@
     "svelte-autosize": "1.1.0",
     "svelte-awesome": "3.2.1",
     "svrollbar": "0.12.0",
-    "theme-change": "2.5.0"
+    "theme-change": "2.5.0",
+    "@front-os/core": "*"
   }
 }

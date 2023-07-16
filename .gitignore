@@ -33,6 +33,7 @@ dist
 .turbo
 .yarn
 coverage
+vite.config.ts.timestamp-*
 
 # env
 .env
