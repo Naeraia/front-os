@@ -100,7 +100,7 @@
                     <img src={settings.icon} alt={settings.name} class="w-6 h-6" />
                 </button>
             </div>
-            <div class="flex items-center justify-end">
+            <div class="flex items-center justify-end text-neutral-content">
                 <div class="flex flex-col text-right">
                     <span class="text-sm">{timeFormatter.format($time)}</span>
                     <span class="text-sm">{dateFormatter.format($time)}</span>

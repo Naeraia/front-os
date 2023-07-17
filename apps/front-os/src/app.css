@@ -7,7 +7,7 @@ html, body {
 }
 
 .window {
-    @apply absolute bg-base-300 rounded-lg overflow-hidden shadow-md flex flex-col z-10;
+    @apply absolute bg-base-300 rounded-box overflow-hidden shadow-md flex flex-col z-10;
 }
 
 .window-title {
